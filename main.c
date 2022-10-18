@@ -1,16 +1,27 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int counter;
-void set_counter(){
-	counter=20;
-} 
+int i;
+void f(void);
+
 int main(void){
-	printf("counter=%d\n",counter);
-	set_counter();
-	printf("counter=%d",counter);
+	
+	for(i=0; i<5; i++){
+		f();
+		printf("\n");
+		
+	}
+	/*
+	for(i=0; i<5; i++){
+		printf("#");
+	}
+	*/
 	
 	return 0;
+}
 
-	
+void f(void){
+	for(i=0; i<10; i++){
+		printf("#");
+	}
 }
