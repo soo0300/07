@@ -1,22 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int inc(int counter); /*함수 선언!*/
 int main(void){
-	int i;
-	for(i=0; i<5; i++){
-		int temp=1;
-		printf("temp: %d\n",temp);
-		temp++;
-		/*temp 변수가 생성 소멸을 반복*/
-	}
-	
-	int temp2;
-	/*의도한대로 코드가 돌아가려면 temp2변수를 생존하게 끔*/
-	for(i=0; i<5; i++){
-		printf("temp2: %d\n",temp2);
-		temp2++;
-	}
+	int i=5;
+	printf("함수 호출 전 i = %d\n",i);
+	inc(i);
+	printf("함수호출 후1  i = %d\n",i);
+	i=inc(i);
+	printf("함수호출 후2 i = %d\n",i);
+		
 	return 0;
-
-	
+	 
+}
+int inc(int counter){
+	counter++;
+	return counter;
 }
